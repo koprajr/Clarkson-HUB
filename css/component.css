@@ -1,0 +1,659 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+@font-face {
+	font-family: 'codropsicons';
+	src:url('../fonts/codropsicons/codropsicons.eot');
+	src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/codropsicons/codropsicons.woff') format('woff'),
+		url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
+		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+body, html { font-size: 100%; padding: 0; margin: 0;}
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
+
+body {
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+	background: #f2f2f2;
+}
+a {
+	color: #ffffff;
+	text-decoration: none;
+}
+a:hover,
+a:active {
+	color: #333;
+	cursor: hand;
+	cursor: pointer;
+}
+#alert {
+	text-align: center;
+	color: white;
+	padding: 5px 0px;
+}
+#alert.success {
+	background-color:#4F8A10;
+}
+#alert.error {
+	background-color:#D8000C;
+}
+
+/*--------------------------------------*/
+
+.grid {
+	max-width: 69em;
+	list-style: none;
+	margin: 30px auto;
+	padding: 0;
+}
+.grid li {
+	display: block;
+	float: left;
+	padding: 7px;
+	width: 31%;
+	margin: 1%;
+	opacity: 0;
+	background-color: #015847;
+	box-shadow: 2px 2px 2px #888888;
+	-moz-box-shadow: 2px 2px 2px #888888;
+  	-webkit-box-shadow: 2px 2px 2px #888888;
+}
+.grid li:hover {
+	background-color: #BBBBBB;
+	cursor: hand;
+	cursor: pointer;
+}
+/*.grid li:nth-child(4), .grid li:nth-child(5), .grid li:nth-child(8) {
+	background-color: #fff;
+}*/
+
+div.container.grid .content {
+	background-color: #015847;
+	box-shadow: 2px 2px 2px #888888;
+	-moz-box-shadow: 2px 2px 2px #888888;
+  	-webkit-box-shadow: 2px 2px 2px #888888;
+	padding: 10px;
+	margin: 1%;
+	color: #ffffff;
+}
+#overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(0,0,0,0.5); /*dim the background*/
+}
+
+#modal {
+    /* some styles to position the modal at the center of the page */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    margin-left: -255px;
+    margin-top: -200px;
+    background-color: #fcbb3b;
+    text-align: center;
+	max-width: 90%;
+	padding: 30px;
+  
+}
+#modal h4 {
+	margin: 0px 0px 10px 0px;
+}
+#modal ul {
+	list-style-type: none;
+	padding: 0px;
+	margin: 20px 0px 0px 0px;
+}
+#modal ul li {
+	text-align:left;
+	margin: 15px 0px;
+}
+#modal .modalClose {
+	font-size: 2.0em;
+	display: block;
+	margin-top: -25px;
+	margin-right: -25px;
+	background: #015847;
+	width: 30px;
+	float: right;
+	height: 30px;
+	line-height: 25px;
+	color: #ffffff;
+}
+
+#tipsForm {
+}
+#tipsForm input, #tipsForm select, #tipsForm textarea  {
+	padding: .5em .6em;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-shadow: inset 0 1px 3px #ddd;
+	border-radius: 4px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	min-width: 300px;
+}
+#tipsForm label, #tipsForm input, #tipsForm select, #tipsForm textarea  {
+	display: block;
+	margin: .25em auto;
+}
+#tipsForm label  {
+	font-size: 18px;
+	width: 300px;
+	margin: 0 auto;
+}
+#tipsForm button {
+	background-color: #fcbb3b;
+	color: #fff;
+	font-size: 16px;
+	text-decoration: none;
+	border-radius: 2px;
+	text-align: center;
+	margin: 0 auto;
+	display: block;
+	min-width: 100px;
+	min-height: 30px;
+	border: none;
+	text-transform: uppercase;
+}
+#tipsForm input, #tipsForm select, #tipsForm textarea {
+	margin-bottom: 15px;
+}
+#tipsForm .additionalInfoInstructions {
+	margin: -15px auto 26px auto;
+	color: #DDD;
+	width: 300px;
+}
+#tipsForm #additionalInfo {
+	min-height: 150px;
+}
+#required {
+	color: #FF0000;
+	padding-right: 2px;
+}
+
+.card {
+	position: relative;
+	width: 340px;
+	margin: 0 auto;
+	padding: 0 45px 20px 45px;
+	display:inline-block;
+	margin-bottom: 30px;
+}
+span#cardAmount {
+	position: absolute;
+	right: -3px;
+	bottom: 5px;
+	font-weight: bold;
+	color: #015847;
+	font-size: 3.5em;
+	-webkit-text-stroke: 1px #eee;
+	text-shadow: -1px -1px 0 #bbbbbb, 1px -1px 0 #bbbbbb, -1px 2px 0 #fff, 1px 2px 0 #FFF;
+	-webkit-text-shadow: -1px -1px 0 #bbbbbb, 1px -1px 0 #bbbbbb, -1px 2px 0 #fff, 1px 2px 0 #FFF;
+	-moz-text-shadow: -1px -1px 0 #bbbbbb, 1px -1px 0 #bbbbbb, -1px 2px 0 #fff, 1px 2px 0 #FFF;
+	-o-text-shadow: -1px -1px 0 #bbbbbb, 1px -1px 0 #bbbbbb, -1px 2px 0 #fff, 1px 2px 0 #FFF;
+	padding: 0 45px;
+}
+span#cardTitle {
+	-webkit-transform: rotate(270deg);
+	-moz-transform: rotate(270deg);
+	-o-transform: rotate(270deg);
+	display: block;
+	position: absolute;
+	bottom: 100;
+	font-size: 1.75em;
+	-webkit-text-stroke: 1px #015847;
+	-moz-text-stroke: 1px #015847;
+	-o-text-stroke: 1px #015847;
+	width: 188px;
+	text-align: center;
+	left: -61px;
+}
+
+.grid li.login {
+	background-color: #fcbb3b;
+}
+.grid li.bgContorls {
+	background-color: #BBBBBB;
+}
+#pt-main a.back {
+	background-color: #fcbb3b;
+	margin: 5px 0px;
+	padding: 15px;
+}
+.grid li.login a img.icon, #pt-main a.back img.icon {
+	width: 35px;
+	height: 35px;
+	margin: -3px 4px 0px 4px;
+	display: inline-block;
+	float: right;
+}
+.grid li.login a, #pt-main a.back {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	float: left;
+	font-size: 1.5em;
+	width: 100%;
+}
+
+.grid li.logo {
+	background-color:transparent;
+	box-shadow: none;
+	-moz-box-shadow: none;
+  	-webkit-box-shadow: none;
+}
+
+.grid li a span{
+	text-align: center;
+	font-size: 24px;
+	color: white;
+	width: 100%;
+	margin: 10px auto 0px auto;
+	display: block;
+}
+
+.grid li a:hover span{
+	color: #ffffff;
+	cursor: hand;
+	cursor: pointer;
+}
+
+.grid li div.importantNumbers {
+	margin: 2px -7px;
+	padding: 5px 20px;
+	background: rgba(255, 255, 255, 0.29);
+}
+.grid li div.importantNumbers span.number{
+	font-size: 1.0em;
+	display: inline-block;
+	text-align: right;
+	margin: 0px;
+}
+
+
+
+.grid li.shown,
+.no-js .grid li,
+.no-cssanimations .grid li {
+	opacity: 1;
+}
+
+.grid li a,
+.grid li img {
+	outline: none;
+	border: none;
+	display: block;
+	max-width: 100%;
+	margin: 0 auto;
+	
+}
+
+.grid li .nextEvent {	
+	background: #f2f2f2;
+	width: 100%;
+	padding: 10px;
+	color: #015847;
+	margin-top: 15px;
+}
+.grid li .nextEvent .label {	
+	margin: -30px 0px 10px -10px;
+	color: #fff;
+}
+.grid li .nextEvent .date {	
+	background: white;
+	margin: 5px 5px 5px 0px;
+	padding: 4px;
+	display: block;
+	min-width: 50px;
+	min-height: 50px;
+	border: 2px solid #DDD;
+	float: left;
+}
+.grid li .nextEvent .date .day {
+	font-size: 20px;
+	text-align: center;
+	line-height: 18px;
+	padding-top: 2px;
+}
+.grid li .nextEvent .date .month {
+	font-size: 18px;
+	text-align: center;
+	line-height: 18px;
+	text-transform: uppercase;
+}
+.grid li .nextEvent .details {	
+	display: block;
+	margin-top: 5px;
+	min-height: 50px;
+}
+.grid li .nextEvent .details .time, .grid li .nextEvent .details .location{	
+	display: inline;
+}
+.grid li .nextEvent .details .time{	
+	padding-right: 5px;
+}
+
+
+
+.grid li img.icon {
+	width: auto;
+	max-height: 150px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+/* Effect 1: opacity */
+.grid.effect-1 li.animate {
+	-webkit-animation: fadeIn 0.65s ease forwards;
+	-moz-animation: fadeIn 0.65s ease forwards;
+	animation: fadeIn 0.65s ease forwards;
+}
+
+@-webkit-keyframes fadeIn {
+	to { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+	to { opacity: 1; }
+}
+
+@keyframes fadeIn {
+	to { opacity: 1; }
+}
+
+/* Effect 2: Move Up */
+.grid.effect-2 li.animate {
+	-webkit-transform: translateY(200px);
+	-moz-transform: translateY(200px);
+	transform: translateY(200px);
+	-webkit-animation: moveUp 0.65s ease forwards;
+	-moz-animation: moveUp 0.65s ease forwards;
+	animation: moveUp 0.65s ease forwards;
+}
+
+@-webkit-keyframes moveUp {
+	to { -webkit-transform: translateY(0); opacity: 1; }
+}
+
+@-moz-keyframes moveUp {
+	to { -moz-transform: translateY(0); opacity: 1; }
+}
+
+@keyframes moveUp {
+	to { transform: translateY(0); opacity: 1; }
+}
+
+/* Effect 3: Scale up */
+.grid.effect-3 li.animate {
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	transform: scale(0.6);
+	-webkit-animation: scaleUp 0.65s ease-in-out forwards;
+	-moz-animation: scaleUp 0.65s ease-in-out forwards;
+	animation: scaleUp 0.65s ease-in-out forwards;
+}
+
+@-webkit-keyframes scaleUp {
+	to { -webkit-transform: scale(1); opacity: 1; }
+}
+
+@-moz-keyframes scaleUp {
+	to { -moz-transform: scale(1); opacity: 1; }
+}
+
+@keyframes scaleUp {
+	to { transform: scale(1); opacity: 1; }
+}
+
+/* Effect 4: fall perspective */
+.grid.effect-4 {
+	-webkit-perspective: 1300px;
+	-moz-perspective: 1300px;
+	perspective: 1300px;
+}
+
+.grid.effect-4 li.animate {
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform: translateZ(400px) translateY(300px) rotateX(-90deg);
+	-moz-transform: translateZ(400px) translateY(300px) rotateX(-90deg);
+	transform: translateZ(400px) translateY(300px) rotateX(-90deg);
+	-webkit-animation: fallPerspective .8s ease-in-out forwards;
+	-moz-animation: fallPerspective .8s ease-in-out forwards;
+	animation: fallPerspective .8s ease-in-out forwards;
+}
+
+@-webkit-keyframes fallPerspective {
+	100% { -webkit-transform: translateZ(0px) translateY(0px) rotateX(0deg); opacity: 1; }
+}
+
+@-moz-keyframes fallPerspective {
+	100% { -moz-transform: translateZ(0px) translateY(0px) rotateX(0deg); opacity: 1; }
+}
+
+@keyframes fallPerspective {
+	100% { transform: translateZ(0px) translateY(0px) rotateX(0deg); opacity: 1; }
+}
+
+/* Effect 5: fly (based on http://lab.hakim.se/scroll-effects/ by @hakimel) */
+.grid.effect-5 {
+	-webkit-perspective: 1300px;
+	-moz-perspective: 1300px;
+	perspective: 1300px;
+}
+
+.grid.effect-5 li.animate {
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform-origin: 50% 50% -300px;
+	-moz-transform-origin: 50% 50% -300px;
+	transform-origin: 50% 50% -300px;
+	-webkit-transform: rotateX(-180deg);
+	-moz-transform: rotateX(-180deg);
+	transform: rotateX(-180deg);
+	-webkit-animation: fly .8s ease-in-out forwards;
+	-moz-animation: fly .8s ease-in-out forwards;
+	animation: fly .8s ease-in-out forwards;
+}
+
+@-webkit-keyframes fly {
+	100% { -webkit-transform: rotateX(0deg); opacity: 1; }
+}
+
+@-moz-keyframes fly {
+	100% { -moz-transform: rotateX(0deg); opacity: 1; }
+}
+
+@keyframes fly {
+	100% { transform: rotateX(0deg); opacity: 1; }
+}
+
+/* Effect 6: flip (based on http://lab.hakim.se/scroll-effects/ by @hakimel) */
+.grid.effect-6 {
+	-webkit-perspective: 1300px;
+	-moz-perspective: 1300px;
+	perspective: 1300px;
+}
+
+.grid.effect-6 li.animate {
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform-origin: 0% 0%;
+	-moz-transform-origin: 0% 0%;
+	transform-origin: 0% 0%;
+	-webkit-transform: rotateX(-80deg);
+	-moz-transform: rotateX(-80deg);
+	transform: rotateX(-80deg);
+	-webkit-animation: flip .8s ease-in-out forwards;
+	-moz-animation: flip .8s ease-in-out forwards;
+	animation: flip .8s ease-in-out forwards;
+}
+
+@-webkit-keyframes flip {
+	100% { -webkit-transform: rotateX(0deg); opacity: 1; }
+}
+
+@-moz-keyframes flip {
+	100% { -moz-transform: rotateX(0deg); opacity: 1; }
+}
+
+@keyframes flip {
+	100% { transform: rotateX(0deg); opacity: 1; }
+}
+
+/* Effect 7: helix (based on http://lab.hakim.se/scroll-effects/ by @hakimel) */
+.grid.effect-7 {
+	-webkit-perspective: 1300px;
+	-moz-perspective: 1300px;
+	perspective: 1300px;
+}
+
+.grid.effect-7 li.animate {
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform: rotateY(-180deg);
+	-moz-transform: rotateY(-180deg);
+	transform: rotateY(-180deg);
+	-webkit-animation: helix .8s ease-in-out forwards;
+	-moz-animation: helix .8s ease-in-out forwards;
+	animation: helix .8s ease-in-out forwards;
+}
+
+@-webkit-keyframes helix {
+	100% { -webkit-transform: rotateY(0deg); opacity: 1; }
+}
+
+@-moz-keyframes helix {
+	100% { -moz-transform: rotateY(0deg); opacity: 1; }
+}
+
+@keyframes helix {
+	100% { transform: rotateY(0deg); opacity: 1; }
+}
+
+/* Effect 8:  */
+.grid.effect-8 {
+	-webkit-perspective: 1300px;
+	-moz-perspective: 1300px;
+	perspective: 1300px;
+}
+
+.grid.effect-8 li.animate {
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform: scale(0.4);
+	-moz-transform: scale(0.4);
+	transform: scale(0.4);
+	-webkit-animation: popUp .8s ease-in forwards;
+	-moz-animation: popUp .8s ease-in forwards;
+	animation: popUp .8s ease-in forwards;
+}
+
+@-webkit-keyframes popUp {
+	70% { -webkit-transform: scale(1.1); opacity: .8; -webkit-animation-timing-function: ease-out; }
+	100% { -webkit-transform: scale(1); opacity: 1; }
+}
+
+@-moz-keyframes popUp {
+	70% { -moz-transform: scale(1.1); opacity: .8; -moz-animation-timing-function: ease-out; }
+	100% { -moz-transform: scale(1); opacity: 1; }
+}
+
+@keyframes popUp {
+	70% { transform: scale(1.1); opacity: .8; animation-timing-function: ease-out; }
+	100% { transform: scale(1); opacity: 1; }
+}
+
+@media screen and (max-width: 900px) {
+	.grid li {
+		width: 48%;
+	}
+	.grid {
+		margin: 0px auto;
+		padding: 0;
+	}
+	object.icon {
+		max-height: 120px;
+	}
+	.grid li a span{
+		font-size: 18px;
+	}
+	.grid li img.icon {
+		max-height: 100px;
+	}
+	.grid li.login a {
+		font-size: 1.1em;
+	}
+	.grid li.login a img.icon {
+		margin: -8px 4px 0px 4px;
+	}
+	
+	.grid li .nextEvent {	
+		margin-top: 35px;
+		padding: 5px;
+	}
+	.grid li .nextEvent .date {	
+		margin: 5px auto;
+		display: block;
+		float: none;
+	}
+	.grid li .nextEvent .details {	
+		display: block;
+		text-align: center;
+	}
+	.grid li .nextEvent .details .time, .grid li .nextEvent .details .location{	
+		display: block;
+	}
+	#modal {
+		top: 20%;
+		margin: 5%;
+		left: 0;
+	}
+	.grid li.bgContorls {
+		display: none;
+	}
+	div.main {
+		display: none;
+	}
+	#tipsForm input, #tipsForm select, #tipsForm textarea  {
+		width: 95%;
+		font-size: 16px;
+		margin: 0.25em 0 15px 0;
+	}
+	#tipsForm input#dateTime  {
+		padding: .5em .1em;
+		min-width: 95%;
+	}
+	#tipsForm label, #tipsForm .additionalInfoInstructions  {
+		margin-left: 0;
+	}
+	#tipsForm .additionalInfoInstructions  {
+		margin-top: 5px;
+	}
+}
+
+@media screen and (max-width: 300px) {
+	.grid li {
+		width: 100%;
+	}
+}
+
+
+
